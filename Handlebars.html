@@ -1,0 +1,21 @@
+<head>
+	<title>Test</title>
+</head>
+
+<body>
+	<div id="whole">
+		{{> list}}
+	</div>
+</body>
+
+<template name="list">
+	<div>
+		{{#each people}}
+			{{> person}}
+		{{/each}}
+	</div>
+</template>
+
+<template name="person">
+
+</template>
