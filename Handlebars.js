@@ -1,9 +1,9 @@
 
-
 Peeps = Meteor.collection("people");
 
 if (Meteor.isClient) {
-  Template.list.people
+  Template.list.people = function () {
+	return Peeps.find({});
   };
 
   Template.hello.events({
