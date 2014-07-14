@@ -1,15 +1,15 @@
 
-Peeps = Meteor.collection("people");
+People = new Meteor.Collection("people");
 
 if (Meteor.isClient) {
   Template.list.people = function () {
-	return Peeps.find({});
+	return People.find({});
   };
 }
 
 if (Meteor.isServer) {
   Meteor.startup(function () {
-		if (Peeps.find().count() == 0){
+		if (People.find().count() == 0){
 			var names = ["Ada Lovelace",
 						"Grace Hopper",
 					    "Marie Curie",
@@ -18,7 +18,7 @@ if (Meteor.isServer) {
 					    "Claude Shannon"];
 		}
 		for (var i = 0; i < names.length; i++){
-			Peeps.insert({name: names[i]});
+			People.insert({name: names[i]});
 		}
   });
 }
